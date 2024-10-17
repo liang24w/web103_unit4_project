@@ -7,7 +7,7 @@ import RoofsAPI from '../services/RoofsAPI';
 import WheelsAPI from '../services/WheelsAPI';
 import CarsAPI from '../services/CarsAPI';
 import { calculateTotalPrice } from '../utilities/calcprice';
-import { validateConvertibleOptions } from '../utilities/validation'; // Import the validation function
+import { validateConvertibleOptions } from '../utilities/validation'; 
 
 const CreateCar = () => {
     const navigate = useNavigate();
@@ -123,7 +123,7 @@ const CreateCar = () => {
     const handleCreateCar = async () => {
         console.log(isConvertible)
         if (!validateConvertibleOptions(isConvertible, selectedOptions)) {
-            alert('Convertible cars must have a soft top roof.');
+            alert('Convertible cars must have a Carbon Flash - Nacelles roof.');
             return;
         }
 
