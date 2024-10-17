@@ -4,6 +4,11 @@ import favicon from 'serve-favicon'
 import dotenv from 'dotenv'
 
 // import the router from your routes file
+import carsRouter from './routes/carRoutes.js';
+import exteriorsRouter from './routes/exteriors.js';
+import roofsRouter from './routes/roofs.js';
+import wheelsRouter from './routes/wheels.js';
+import interiorsRouter from './routes/interiors.js';
 
 
 dotenv.config()
@@ -23,7 +28,11 @@ else if (process.env.NODE_ENV === 'production') {
 }
 
 // specify the api path for the server to use
-
+app.use('/api/cars', carsRouter);
+app.use('/api/exteriors', exteriorsRouter);
+app.use('/api/roofs', roofsRouter);
+app.use('/api/wheels', wheelsRouter);
+app.use('/api/interiors', interiorsRouter);
 
 if (process.env.NODE_ENV === 'production') {
     app.get('/*', (_, res) =>
